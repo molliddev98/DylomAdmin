@@ -221,7 +221,7 @@ Kalau nama sebagian cocok dengan **lebih dari satu** pemain, command ditolak dan
 | `;jail <pemain>` / `;unjail` | Penjara. Kabur atau respawn otomatis dikembalikan ke dalam |
 | `;smite <pemain>` | Sambar petir (suaranya terdengar satu server) |
 | `;rocket <pemain>` | Roket di punggung, meluncur, lalu meledak |
-| `;rope <pemain> [pemegang]` / `;unrope` | Ikat dengan tali. `;rope andi budi` = Budi yang memegang. Saat pemegang terbang, target tergantung di bawahnya |
+| `;rope <pemain> [pemegang]` / `;unrope` | Ikat dengan tali. `;rope starsB969 dylom` = Budi yang memegang. Saat pemegang terbang, target tergantung di bawahnya |
 | `;kick <pemain> [alasan]` | Keluarkan dari server |
 | `;sban <pemain> [alasan]` / `;unsban` | Ban hanya di server ini (alias `serverban`) |
 | `;mute <pemain>` / `;unmute` | Larang / izinkan chat |

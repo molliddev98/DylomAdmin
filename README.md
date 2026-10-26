@@ -62,20 +62,23 @@ Beberapa fitur hanya berjalan di game yang sudah dipublish (tidak di Studio): `;
 
 ```
 DylomAdmin
+├─ README                    ← panduan singkat di dalam Studio
 ├─ Config  [Configuration]   ← SEMUA yang boleh kamu ubah ada di sini
 │   ├─ (Attributes)          prefix, tombol, ban, batas speed/jump, radius nuke, dll
 │   ├─ Settings              daftar: urutan rank, admin, grup, tombol khusus
 │   ├─ Addons                command buatanmu sendiri (lihat _ContohAddon)
-│   ├─ Assets                tool untuk ;give (contoh: Building Tools)
+│   ├─ Assets                tool milikmu untuk ;give & tab Assets (lihat catatan di bawah)
 │   └─ Effects               model & sound efek (Freeze, Jail, Rocket, Sounds)
 └─ Loader  [Script]          ← mesin DylomAdmin, tidak perlu diubah
-    └─ MainModule
+    └─ Core
         ├─ Server/           Util, Settings, Network, Ranks, Data, Process, Lists, Chat, Players, Update
         ├─ Commands/         Moderasi, Teleport, Karakter, Utilitas, Hukuman
         └─ DylomAdminGui     GUI + script client
 ```
 
 **Aturannya sederhana:** semua yang ingin kamu ubah ada di **`Config`**. Saat update, cukup ganti folder **`Loader`**.
+
+> **Tentang `Config/Assets`:** DylomAdmin tidak menyertakan tool bawaan. Taruh tool milikmu sendiri di folder ini, misalnya **Building Tools (F3X)** dari Creator Store, supaya bisa diberikan lewat `;give` atau tombol **Ambil** di `;panel`.
 
 ---
 
@@ -179,9 +182,9 @@ CommandButton = {
 | `others` | Semua kecuali kamu |
 | `random` | Satu pemain acak |
 | `admins` / `nonadmins` | Semua admin / semua non-admin |
-| `andi` | Pemain yang username / display name-nya diawali "andi" |
-| `@andi123` | Username persis |
-| `andi,budi` | Beberapa pemain sekaligus |
+| `dylom` | Pemain yang username / display name-nya diawali "andi" |
+| `@dylom` | Username persis |
+| `dylom,budi` | Beberapa pemain sekaligus |
 
 Kalau nama sebagian cocok dengan **lebih dari satu** pemain, command ditolak dan kamu diminta mengetik lebih lengkap. Ini mencegah salah sasaran.
 
@@ -221,7 +224,7 @@ Kalau nama sebagian cocok dengan **lebih dari satu** pemain, command ditolak dan
 | `;jail <pemain>` / `;unjail` | Penjara. Kabur atau respawn otomatis dikembalikan ke dalam |
 | `;smite <pemain>` | Sambar petir (suaranya terdengar satu server) |
 | `;rocket <pemain>` | Roket di punggung, meluncur, lalu meledak |
-| `;rope <pemain> [pemegang]` / `;unrope` | Ikat dengan tali. `;rope starsB969 dylom` = Budi yang memegang. Saat pemegang terbang, target tergantung di bawahnya |
+| `;rope <pemain> [pemegang]` / `;unrope` | Ikat dengan tali. `;rope andi budi` = Budi yang memegang. Saat pemegang terbang, target tergantung di bawahnya |
 | `;kick <pemain> [alasan]` | Keluarkan dari server |
 | `;sban <pemain> [alasan]` / `;unsban` | Ban hanya di server ini (alias `serverban`) |
 | `;mute <pemain>` / `;unmute` | Larang / izinkan chat |
@@ -342,7 +345,6 @@ Ada atribut di `Config` dengan isi yang salah, misalnya teks di kolom angka. Per
 ## Kredit
 
 - **DylomAdmin** dibuat oleh **starsB969**.
-- **Building Tools (F3X)** di folder `Config/Assets` dibuat oleh tim F3X dan tetap menjadi milik pembuatnya.
 - Sebagian **sound efek** berasal dari Creator Store Roblox (ProSoundEffects & Roblox) dan dipakai lewat asset id.
 
 Kalau DylomAdmin membantu game-mu, beri ⭐ pada repo ini!
